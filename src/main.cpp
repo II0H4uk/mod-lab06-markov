@@ -6,7 +6,8 @@ int main() {
     MarkovChain markChain = MarkovChain("input.txt");
     vector<string> genText = markChain.Generator(MAXGEN);
     for (auto word : genText) {
-        if (word!="."&&word!=";"&&word!="!"&&word!=","&&word!=":")
+        if (word != "." && word != ";" && word != 
+            "!" && word != "," && word != ":")
             cout << " ";
         cout << word;
     }
