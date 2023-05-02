@@ -21,8 +21,7 @@ TEST(suffixCheck, test3) {
     prefix prefixTest = prefix();
     prefixTest.push_back("Старик");
     prefixTest.push_back("ловил");
-    suffix suf = chain.Get_statetab().find(prefixTest)->second;
-    EXPECT_EQ(suf.size(), 1);
+    EXPECT_EQ(chain.Get_statetab().find(prefixTest)->second.size(), 1);
 }
 
 TEST(suffixCheck, test4) {
@@ -30,8 +29,7 @@ TEST(suffixCheck, test4) {
     prefix prefixTest = prefix();
     prefixTest.push_back("Так");
     prefixTest.push_back("и");
-    suffix suf = chain.Get_statetab().find(prefixTest)->second;
-    EXPECT_EQ(suf.size(), 3);
+    EXPECT_EQ(chain.Get_statetab().find(prefixTest)->second.size(), 3);
 }
 
 TEST(generatorCheck, test5) {
