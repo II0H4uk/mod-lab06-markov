@@ -22,11 +22,11 @@ vector<string> MarkovChain::Generator(int maxLength) {
     vector<string> buf = vector<string>();
     prefix pref = statetab.begin()->first;
     int num;
-    srand(time(NULL));
+    std::srand(time(NULL));
 
     for (int i = 0 ; i < maxLength &&
         statetab.find(pref) != statetab.end(); i++) {
-        num = rand_r() % (statetab[pref].size());
+        num = std::rand() % (statetab[pref].size());
         suffix bufsuf = statetab[pref];
         buf.push_back(bufsuf[num]);
         pref.pop_front();
