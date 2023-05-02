@@ -24,7 +24,8 @@ vector<string> MarkovChain::Generator(int maxLength) {
     int num;
     srand(time(NULL));
 
-    for (int i = 0; i < maxLength && statetab.find(pref) != statetab.end(); i++) {
+    for (int i=0;i<maxLength&&statetab.find(pref)
+         !=statetab.end();i++){
         num = rand_r() % (statetab[pref].size());
         suffix bufsuf = statetab[pref];
         buf.push_back(bufsuf[num]);
@@ -48,8 +49,8 @@ vector<string> MarkovChain::ReadFile(string path) {
     while (getline(read, word)) {
         buf = "";
         for (int i = 0; ; i++) {
-            if (word[i]==' '||word[i]=='.'||word[i]==';'||word[i]
-                =='!'||word[i]==','||word[i]==':'||word[i]=='"') {
+            if (word[i] == ' ' || word[i] == '.' || word[i] == ';' || word[i]
+                == '!' || word[i] == ',' || word[i] == ':' || word[i] == '"') {
                 if (buf != "") {
                     words.push_back(buf);
                     buf = "";
@@ -60,8 +61,9 @@ vector<string> MarkovChain::ReadFile(string path) {
                     words.push_back(buf);
                     buf = "";
                 }
-            } else
+            } else {
                 buf += word[i];
+            }
             if (word[i] == '\0')
                 break;
         }
