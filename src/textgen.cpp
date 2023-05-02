@@ -24,8 +24,8 @@ vector<string> MarkovChain::Generator(int maxLength) {
     int num;
     srand(time(NULL));
 
-    for (int i=0;i<maxLength&&statetab.find(pref)
-         !=statetab.end();i++){
+    for (int i = 0 ; i < maxLength && 
+        statetab.find(pref) != statetab.end(); i++) {
         num = rand_r() % (statetab[pref].size());
         suffix bufsuf = statetab[pref];
         buf.push_back(bufsuf[num]);
