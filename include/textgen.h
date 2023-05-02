@@ -21,11 +21,11 @@ typedef deque<string> prefix;
 typedef vector<string> suffix;
 
 class MarkovChain {
-    private:
+ private:
         map<prefix, suffix> statetab;
 
         vector<string> ReadFile(string path);
-    public:
+ public:
         explicit MarkovChain(string path);
 
         vector<string> Generator(int maxLength);
