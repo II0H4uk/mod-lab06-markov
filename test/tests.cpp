@@ -1,7 +1,6 @@
 // Copyright 2021 GHA Test Team
 #include <gtest/gtest.h>
-#include "../include/MCHeader.h"
-#include "../src/MarkovChain.cpp"
+#include "textgen.h"
 
 TEST(prefixCheck, test1) {
     MarkovChain chain = MarkovChain("input.txt");
